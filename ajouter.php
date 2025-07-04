@@ -27,7 +27,7 @@
         <textarea name="description_ouvrage" id="description_ouvrage" cols="30" rows="10"></textarea>
 
         <label for="couverture_ouvrage">Couverture de l'ouvrage</label>
-        <input type="file" name="couverture_ouvrage" id="couverture_ouvrage">
+        <input type="file" name="file" id="couverture_ouvrage">
         <input type="submit" value="Ajouter l'ouvrage">
     </form>
 </body>

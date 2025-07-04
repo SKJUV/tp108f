@@ -39,12 +39,12 @@ if(isset($_POST)){
         echo "erreur d'insertion";
     }else{
         echo "insertion reussie";
-        echo $_POST['titre_ouvrage'];
-        echo $_POST['auteur_ouvrage'];
-        echo $_POST['editeur_ouvrage'];
-        echo $_POST['ISBN'];
-        echo $_POST['annee_publication'];
-        echo $_POST['description_ouvrage'];
+        echo $_POST['titre_ouvrage']."</br>";
+        echo $_POST['auteur_ouvrage']."</br>";
+        echo $_POST['editeur_ouvrage']."</br>";
+        echo $_POST['ISBN']."</br>";
+        echo $_POST['annee_publication']."</br>";
+        echo $_POST['description_ouvrage']."</br>";
         echo $chemin_destination;
     }
     $con=mysqli_close($con);
