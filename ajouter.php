@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="enregistrement.php" method="post" enctype="multipart/form-data">
+    <form action="rechercher.php" method="get" enctype="multipart/form-data">
         <label for="titre_ouvrage">Titre de l'ouvrage</label>
         <input type="text" name="titre_ouvrage" id="titre_ouvrage">
 

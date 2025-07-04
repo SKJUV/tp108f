@@ -18,16 +18,16 @@
 
     <form action="rechercher.php" method="get" class="search-form">
         <label for="ISBN">ISBN :</label>
-        <input type="text" name="ISBN" id="ISBN">
+        <input type="text" id="ISBN" name="ISBN" placeholder="ISBN">
 
-        <label for="auteur">Auteur :</label>
-        <input type="text" name="auteur" id="auteur">
+        <label for="auteur_ouvrage">Auteur :</label>
+        <input type="text" id="auteur_ouvrage" name="auteur_ouvrage" placeholder="Auteur">
 
-        <label for="editeur">Éditeur :</label>
-        <input type="text" name="editeur" id="editeur">
+        <label for="editeur_ouvrage">Éditeur :</label>
+        <input type="text" id="editeur_ouvrage" name="editeur_ouvrage" placeholder="Éditeur">
 
-        <label for="annee">Année de publication :</label>
-        <input type="number" name="annee" id="annee" min="0">
+        <label for="annee_publication">Année de publication :</label>
+        <input type="text" id="annee_publication" name="annee_publication" placeholder="Année">
 
         <input type="submit" value="Rechercher">
     </form>

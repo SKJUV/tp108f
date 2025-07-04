@@ -232,32 +232,76 @@
                 <h2 class="title">Mes Livres</h2>
                 <p class="subtitle">Gérez votre collection d'œuvres littéraires</p>
                 <?php
-            $con=mysqli_connect("localhost","root","","ict_108");
-            if($con==FALSE){
-                echo "erreur d'ouverture";
-                exit(0);
-            }
-            $request=mysqli_query($con,"SELECT * FROM ouvrage");
-            if($request==FALSE){
-                echo "erreur d'affichage";
-            }else{
-                echo "<div class='books-wrapper'>";
-                while($tab=mysqli_fetch_assoc($request)){
-                    echo "<div class='book-card'>
-                        <div class='book-cover'>
-                            <img src='".$tab['chemin_dacces']."' alt='Couverture livre ".$i."'/>
-                        </div>
-                        <div class='book-info'>
-                            <h2>".$tab['titre']."</h2>
-                            <h3>Auteur: ".$tab['auteur']."</h3>
-                            <p>".$tab['descriptions']."</p>
-                        </div>
-                    </div>";
-                }
-                echo "</div>";
-            }
-            $con=mysqli_close($con);
-        ?>
+                    $con=mysqli_connect("localhost","root","","ict108");
+                    if($con==FALSE){
+                        echo "erreur d'ouverture";
+                        exit(0);
+                    }
+                    if((!empty($_GET['auteur_ouvrage']) && !empty($_GET['editeur_ouvrage']) && !empty($_GET['annee_publication'])) || !empty($_GET['ISBN'])){
+                        if(empty($_GET["ISBN"])){
+                            $request=mysqli_query($con,"SELECT * FROM ouvrage WHERE  auteur_ouvrage='".$_GET['auteur_ouvrage']."' AND editeur_ouvrage='".$_GET['editeur_ouvrage']."' AND annee_publication='".$_GET['annee_publication']."' ");
+                            if($request==FALSE){
+                            echo "erreur d'affichage";
+                            }else{
+                                echo "<div class='books-wrapper'>";
+                                while($tab=mysqli_fetch_assoc($request)){
+                                    echo "<div class='book-card'>
+                                        <div class='book-cover'>
+                                            <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
+                                        </div>
+                                        <div class='book-info'>
+                                            <h2>".$tab['titre_ouvrage']."</h2>
+                                            <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
+                                            <p>".$tab['description_ouvrage']."</p>
+                                        </div>
+                                    </div>";
+                                }
+                                echo "</div>";
+                            }
+                        }elseif(empty($_GET["auteur_ouvrage"]) && empty($_GET["editeur_ouvrage"]) && empty($_GET["annee_publication"])){
+                            $request=mysqli_query($con,"SELECT * FROM ouvrage WHERE ISBN='".$_GET['ISBN']."'");
+                            if($request==FALSE){
+                                echo "erreur d'affichage";
+                            }else{
+                            echo "<div class='books-wrapper'>";
+                                while($tab=mysqli_fetch_assoc($request)){
+                                        echo "<div class='book-card'>
+                                            <div class='book-cover'>
+                                                <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
+                                            </div>
+                                            <div class='book-info'>
+                                                <h2>".$tab['titre_ouvrage']."</h2>
+                                                <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
+                                                <p>".$tab['description_ouvrage']."</p>
+                                            </div>
+                                        </div>";
+                                }
+                                echo "</div>";
+                            }
+                        }
+                    }elseif(empty($_GET['auteur_ouvrage']) && empty($_GET['editeur_ouvrage']) && empty($_GET['annee_publication']) && empty($_GET['ISBN'])){
+                        $request=mysqli_query($con,"SELECT * FROM ouvrage");
+                        if($request==FALSE){
+                                echo "erreur d'affichage";
+                            }else{
+                                echo "<div class='books-wrapper'>";
+                                while($tab=mysqli_fetch_assoc($request)){
+                                        echo "<div class='book-card'>
+                                            <div class='book-cover'>
+                                                <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
+                                            </div>
+                                            <div class='book-info'>
+                                                <h2>".$tab['titre_ouvrage']."</h2>
+                                                <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
+                                                <p>".$tab['description_ouvrage']."</p>
+                                            </div>
+                                        </div>";
+                                }
+                                echo "</div>";
+                        }
+                    }    
+                    $con=mysqli_close($con);
+                ?>
             </div>
         </div>
 
