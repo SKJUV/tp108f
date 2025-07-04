@@ -290,11 +290,13 @@
                                             <div class='book-cover'>
                                                 <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
                                             </div>
+
                                             <div class='book-info'>
                                                 <h2>".$tab['titre_ouvrage']."</h2>
                                                 <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
                                                 <p>".$tab['description_ouvrage']."</p>
                                             </div>
+                                            
                                         </div>";
                                 }
                                 echo "</div>";
