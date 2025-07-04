@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque Universitaire</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f5f5f5;
         }
-        header {
+        .navbar {
             background-color: #2c3e50;
             color: white;
             padding: 20px 0;
@@ -22,19 +23,43 @@
             border-radius: 8px;
             margin-bottom: 30px;
         }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 30px;
         }
-        .welcome-section {
-            text-align: center;
-            padding: 20px;
+        .card {
             background: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             width: 80%;
+        }
+        .welcome-section {
+            text-align: center;
         }
         .action-buttons {
             display: flex;
