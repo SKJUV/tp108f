@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="enregistrement.php" method="post">
+    <form action="enregistrement.php" method="post" enctype="multipart/form-data">
         <label for="titre_ouvrage">Titre de l'ouvrage</label>
         <input type="text" name="titre_ouvrage" id="titre_ouvrage">
         <label for="auteur_ouvrage">Auteur de l'ouvrage</label>
@@ -21,7 +21,7 @@
         <label for="description_ouvrage">Description de l'ouvrage</label>
         <textarea name="description_ouvrage" id="description_ouvrage" cols="30" rows="10"></textarea>
         <label for="couverture_ouvrage">Couverture de l'ouvrage</label>
-        <input type="file" name="couverture_ouvrage" id="couverture_ouvrage">
+        <input type="file" name="file" id="file">
         <input type="submit" value="Ajouter l'ouvrage">
     </form>
 </body>
