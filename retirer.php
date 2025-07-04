@@ -38,7 +38,7 @@
             transform: translateY(-2px) scale(1.04);
         }
         .container {
-            max-width: 600px;
+            max-width: 900px; /* Augmente la largeur du formulaire */
             margin: 40px auto 0 auto;
             padding: 0 20px;
         }
@@ -46,7 +46,7 @@
             background: white;
             border-radius: 18px;
             box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-            padding: 40px 30px 30px 30px;
+            padding: 50px 60px 40px 60px; /* Plus grand */
             text-align: center;
             margin-bottom: 40px;
             position: relative;
@@ -110,6 +110,7 @@
     <nav>
         <a href="ajouter.php">Ajouter un ouvrage</a>
         <a href="afficher.php">Afficher un ouvrage</a>
+        
         <a href="index.php">Accueil</a>
     </nav>
     <div class="container">

@@ -117,9 +117,9 @@
         <a href="index.php">Accueil</a>
     </nav>
     <div class="container">
-        <section class="add-section">
+        <section class="add-section" style="max-width: 900px; margin: 0 auto;">
             <h1>Ajouter un ouvrage</h1>
-            <form action="rechercher.php" method="get" enctype="multipart/form-data" class="add-form">
+            <form action="enregistrement.php" method="post" enctype="multipart/form-data" class="add-form">
                 <label for="titre_ouvrage">Titre de l'ouvrage</label>
                 <input type="text" name="titre_ouvrage" id="titre_ouvrage">
 

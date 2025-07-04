@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Auteur</title>
     <link rel="icon" type="image/x-icon" href="captur.PNG">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #ffffff;
-            color: #0A192F;
-            font-family: 'Poppins', Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
             margin: 0;
             padding: 0;
         }
         
-        .header {
-            width: 100%;
-            padding: 16px 32px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        header.header {
+            background: linear-gradient(90deg, #2c3e50 60%, #2980b9 100%);
+            color: white;
+            padding: 32px 0 24px 0;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+            margin-bottom: 30px;
         }
         
         .header-row {
-            width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -38,46 +38,10 @@
             height: 64px;
         }
         
-        .search-bar {
-            width: 260px;
-            padding: 8px 36px 8px 12px;
-            border: 2px solid #FFD700;
-            border-radius: 8px;
-            background: #0A192F;
-            color: #fff;
-            font-size: 1em;
-            outline: none;
-        }
-        
-        .search-bar:focus {
-            border-color: #D4AF37;
-        }
-        
-        .add-btn {
-            background: linear-gradient(135deg, #FFD700, #D4AF37);
-            color: #0A192F;
-            font-weight: 500;
-            padding: 10px 24px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            margin-left: 16px;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .add-btn:hover {
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            transform: translateY(-2px);
-        }
-        
         .main-container {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 0 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .main-header {
@@ -98,11 +62,11 @@
             font-family: 'Playfair Display', serif;
             font-weight: bold;
             margin-bottom: 6px;
-            color: #0A192F;
+            color: #2c3e50;
         }
         
         .main-header .subtitle {
-            color: #666;
+            color: #555;
             font-size: 1em;
         }
         
@@ -111,96 +75,148 @@
             gap: 16px;
         }
         
-        .gold-button {
-            background: linear-gradient(135deg, #FFD700, #D4AF37);
-            color: #0A192F;
-            font-weight: 500;
-            padding: 10px 24px;
+        .add-btn,
+        .gold-button,
+        .red-button {
+            display: inline-block;
+            padding: 12px 28px;
             border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.08em;
             border: none;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            margin-left: 10px;
+        }
+        
+        .add-btn {
+            background: linear-gradient(90deg, #FFD700 60%, #D4AF37 100%);
+            color: #2c3e50;
+        }
+        
+        .add-btn:hover {
+            background: linear-gradient(90deg, #D4AF37 60%, #FFD700 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+        
+        .gold-button {
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            color: white;
         }
         
         .gold-button:hover {
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            transform: translateY(-2px);
+            background: linear-gradient(90deg, #2980b9 60%, #3498db 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
         }
         
         .red-button {
-            background: #e3342f;
-            color: #fff;
-            font-weight: 500;
-            padding: 10px 24px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            background: linear-gradient(90deg, #e74c3c 60%, #ffb199 100%);
+            color: white;
         }
         
         .red-button:hover {
-            background: #c82333;
-            box-shadow: 0 4px 12px rgba(227, 52, 47, 0.15);
-            transform: translateY(-2px);
+            background: linear-gradient(90deg, #c0392b 60%, #e74c3c 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
         }
         
         .books-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin: 40px auto 0 auto;
+            justify-items: center;
+            max-width: 1300px;
         }
         
         .book-card {
-            background: #f9f9f9;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            min-width: 320px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 16px 24px 16px;
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
             transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            cursor: pointer;
         }
         
         .book-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 6px 24px rgba(52, 152, 219, 0.13);
         }
         
         .book-cover {
-            height: 120px;
+            height: 140px;
             overflow: hidden;
-            border-radius: 4px;
-            margin-bottom: 12px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            background: #f7fbff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .book-cover img {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 100%;
             object-fit: cover;
         }
         
         .book-info h2 {
-            font-size: 1.2em;
+            font-size: 1.15em;
             margin: 0 0 8px 0;
-            color: #0A192F;
+            color: #2c3e50;
         }
         
         .book-info h3 {
             font-size: 1em;
             margin: 0 0 8px 0;
-            color: #333;
+            color: #2980b9;
         }
         
         .book-info p {
-            font-size: 0.9em;
-            margin: 0;
-            color: #666;
+            font-size: 0.98em;
+            margin: 0 0 6px 0;
+            color: #555;
         }
-        /* Ajoute ici le reste de ton CSS pour le contenu, les modals, etc. */
+        
+        .book-description {
+            display: none;
+            background: #fffbe6;
+            color: #333;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.10);
+            padding: 12px 14px;
+            margin-top: 10px;
+            font-size: 0.98em;
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            right: 0;
+        }
+        
+        .book-card:hover .book-description {
+            display: block;
+        }
+        
+        @media (max-width: 900px) {
+            .main-container {
+                padding: 0 8px;
+            }
+            
+            .books-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-row {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -208,19 +224,17 @@
     <header class="header">
         <div class="header-row">
             <div style="display: flex; align-items: center; gap: 16px;">
-                <!-- Espace réservé avant le logo -->
                 <div style="width:40px;"></div>
                 <img src="captur.PNG" alt="BOOKSPHERE" class="logo">
             </div>
             <div style="display: flex; align-items: center;">
-                <input type="text" class="search-bar" placeholder="Rechercher un livre...">
-                <button class="add-btn" onclick="window.location.href='livre.html';">
+                <button class="add-btn" onclick="window.location.href='ajouter.php';">
                     <span style="font-size: 1.2em; margin-right: 4px;">+</span> Ajouter un livre
                 </button>
-                <button class="gold-button" onclick="window.location.href='accueil.html';" style="padding: 8px 20px; margin-left: 16px;">
+                <button class="gold-button" onclick="window.location.href='afficher.php';" style="padding: 8px 20px; margin-left: 16px;">
                     &#8592; Retour
                 </button>
-                <button type="red-button" class="add-btn" onclick="window.location.href='delete.html';">
+                <button type="button" class="red-button" onclick="window.location.href='retirer.php';">
                     <i class="button"></i> Supprimer
                 </button>
             </div>
@@ -241,7 +255,7 @@
                         if(empty($_GET["ISBN"])){
                             $request=mysqli_query($con,"SELECT * FROM ouvrage WHERE  auteur_ouvrage='".$_GET['auteur_ouvrage']."' AND editeur_ouvrage='".$_GET['editeur_ouvrage']."' AND annee_publication='".$_GET['annee_publication']."' ");
                             if($request==FALSE){
-                            echo "erreur d'affichage";
+                                echo "erreur d'affichage";
                             }else{
                                 echo "<div class='books-wrapper'>";
                                 while($tab=mysqli_fetch_assoc($request)){
@@ -250,9 +264,12 @@
                                             <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
                                         </div>
                                         <div class='book-info'>
-                                            <h2>".$tab['titre_ouvrage']."</h2>
-                                            <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
-                                            <p>".$tab['description_ouvrage']."</p>
+                                            <h2>TITRE DE L'OUVRAGE: </h2><p>".$tab['titre_ouvrage']."</p>
+                                            <h3>AUTEUR: </h3><p>".$tab['auteur_ouvrage']."</p>
+                                            <h3>EDITEUR DE L'OUVRAGE: </h3><p>".$tab['editeur_ouvrage']."</p>
+                                            <h3>ANNEE DE PUBLICATION: </h3><p>".$tab['annee_publication']."</p>
+                                            <h3>ISBN DE l'OUVRAGE: </h3><p>".$tab['ISBN']."</p>
+                                            <div class='book-description'>".$tab['description_ouvrage']."</div>
                                         </div>
                                     </div>";
                                 }
@@ -263,18 +280,21 @@
                             if($request==FALSE){
                                 echo "erreur d'affichage";
                             }else{
-                            echo "<div class='books-wrapper'>";
+                                echo "<div class='books-wrapper'>";
                                 while($tab=mysqli_fetch_assoc($request)){
-                                        echo "<div class='book-card'>
-                                            <div class='book-cover'>
-                                                <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
-                                            </div>
-                                            <div class='book-info'>
-                                                <h2>".$tab['titre_ouvrage']."</h2>
-                                                <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
-                                                <p>".$tab['description_ouvrage']."</p>
-                                            </div>
-                                        </div>";
+                                    echo "<div class='book-card'>
+                                        <div class='book-cover'>
+                                            <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
+                                        </div>
+                                        <div class='book-info'>
+                                            <h2>TITRE DE L'OUVRAGE: </h2><p>".$tab['titre_ouvrage']."</p>
+                                            <h3>AUTEUR: </h3><p>".$tab['auteur_ouvrage']."</p>
+                                            <h3>EDITEUR DE L'OUVRAGE: </h3><p>".$tab['editeur_ouvrage']."</p>
+                                            <h3>ANNEE DE PUBLICATION: </h3><p>".$tab['annee_publication']."</p>
+                                            <h3>ISBN DE l'OUVRAGE: </h3><p>".$tab['ISBN']."</p>
+                                            <div class='book-description'>".$tab['description_ouvrage']."</div>
+                                        </div>
+                                    </div>";
                                 }
                                 echo "</div>";
                             }
@@ -282,31 +302,32 @@
                     }elseif(empty($_GET['auteur_ouvrage']) && empty($_GET['editeur_ouvrage']) && empty($_GET['annee_publication']) && empty($_GET['ISBN'])){
                         $request=mysqli_query($con,"SELECT * FROM ouvrage");
                         if($request==FALSE){
-                                echo "erreur d'affichage";
-                            }else{
-                                echo "<div class='books-wrapper'>";
-                                while($tab=mysqli_fetch_assoc($request)){
-                                        echo "<div class='book-card'>
-                                            <div class='book-cover'>
-                                                <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
-                                            </div>
-
-                                            <div class='book-info'>
-                                                <h2>".$tab['titre_ouvrage']."</h2>
-                                                <h3>Auteur: ".$tab['auteur_ouvrage']."</h3>
-                                                <p>".$tab['description_ouvrage']."</p>
-                                            </div>
-                                            
-                                        </div>";
-                                }
-                                echo "</div>";
+                            echo "erreur d'affichage";
+                        }else{
+                            echo "<div class='books-wrapper'>";
+                            while($tab=mysqli_fetch_assoc($request)){
+                                echo "<div class='book-card'>
+                                    <div class='book-cover'>
+                                        <img src='".$tab['couverture_ouvrage']."' alt='Couverture livre'/>
+                                    </div>
+                                    <div class='book-info'>
+                                        <h2>TITRE DE L'OUVRAGE: </h2><p>".$tab['titre_ouvrage']."</p>
+                                        <h3>AUTEUR: </h3><p>".$tab['auteur_ouvrage']."</p>
+                                        <h3>EDITEUR DE L'OUVRAGE: </h3><p>".$tab['editeur_ouvrage']."</p>
+                                        <h3>ANNEE DE PUBLICATION: </h3><p>".$tab['annee_publication']."</p>
+                                        <h3>ISBN DE l'OUVRAGE: </h3><p>".$tab['ISBN']."</p>
+                                        <div class='book-description'>".$tab['description_ouvrage']."</div>
+                                    </div>
+                                </div>";
+                            }
+                            echo "</div>";
                         }
-                    }    
+                    }
                     $con=mysqli_close($con);
                 ?>
             </div>
         </div>
-
     </main>
 </body>
+
 </html>
