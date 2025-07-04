@@ -94,6 +94,7 @@
             <div class="action-buttons">
                 <a href="afficher.php" class="btn">Rechercher un ouvrage</a>
                 <a href="ajouter.php" class="btn">Ajouter un nouvel ouvrage</a>
+                <a href="retirer.php" class="btn">Supprimer un ouvrage</a>
             </div>
         </section>
 
