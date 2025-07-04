@@ -8,132 +8,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .navbar {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        .nav-links {
-            list-style: none;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
             margin: 0;
             padding: 0;
-            display: flex;
         }
-        .nav-link {
+        header {
+            background: linear-gradient(90deg, #2c3e50 60%, #2980b9 100%);
             color: white;
-            text-decoration: none;
-            margin-left: 20px;
+            padding: 40px 0 30px 0;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 20px rgba(44,62,80,0.08);
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
         }
-        .card {
+        .welcome-section {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 80%;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .welcome-section img {
+            width: 120px;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 2px 8px #b3c6e0);
+        }
+        .welcome-section h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 2.1em;
+        }
+        .welcome-section p {
+            color: #555;
+            font-size: 1.15em;
+            margin-bottom: 30px;
         }
         .welcome-section {
             text-align: center;
         }
         .action-buttons {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 10px;
         }
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background-color: #3498db;
+            padding: 14px 32px;
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 1.08em;
+            box-shadow: 0 2px 8px rgba(52,152,219,0.12);
+            transition: background 0.2s, transform 0.2s;
         }
         .btn:hover {
-            background-color: #2980b9;
+            background: linear-gradient(90deg, #2980b9 60%, #3498db 100%);
+            transform: translateY(-2px) scale(1.04);
         }
         .features {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 30px;
         }
         .feature {
-            flex: 1;
-            min-width: 250px;
+            flex: 1 1 280px;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 28px 22px;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.07);
             text-align: center;
+            min-width: 260px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .feature:hover {
+            box-shadow: 0 6px 24px rgba(52,152,219,0.13);
+            transform: translateY(-3px) scale(1.03);
+        }
+        .feature h3 {
+            color: #2980b9;
+            margin-bottom: 12px;
+        }
+        .feature p {
+            color: #555;
+            font-size: 1.07em;
         }
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             text-align: center;
-            padding: 20px;
+            padding: 24px 0 18px 0;
             color: #7f8c8d;
-            font-size: 0.9em;
+            font-size: 1em;
+            background: none;
+        }
+        @media (max-width: 900px) {
+            .features {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Bienvenue à la Bibliothèque Universitaire</h1>
-        <p>Votre portail vers la connaissance et la découverte</p>
+        <p style="font-size:1.2em; margin-top:10px;">Votre portail vers la connaissance et la découverte</p>
     </header>
 
     <div class="container">
         <section class="welcome-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Bibliothèque" />
             <h2>Gérez votre bibliothèque en toute simplicité</h2>
             <p>Consultez, ajoutez ou recherchez des ouvrages facilement grâce à notre plateforme intuitive.</p>
-            
             <div class="action-buttons">
-                <a href="afficher.php" class="btn">Rechercher un ouvrage</a>
-                <a href="ajouter.php" class="btn">Ajouter un nouvel ouvrage</a>
-                <a href="retirer.php" class="btn">Supprimer un ouvrage</a>
+                <a href="afficher.php" class="btn">🔍 Rechercher un ouvrage</a>
+                <a href="ajouter.php" class="btn">➕ Ajouter un ouvrage</a>
+                <a href="retirer.php" class="btn">🗑️ Supprimer un ouvrage</a>
             </div>
         </section>
 
         <div class="features">
             <div class="feature">
-                <h3>Recherche avancée</h3>
+                <h3>🔎 Recherche avancée</h3>
                 <p>Trouvez facilement les ouvrages par titre, auteur, éditeur ou année de publication.</p>
             </div>
             <div class="feature">
-                <h3>Gestion simplifiée</h3>
+                <h3>📝 Gestion simplifiée</h3>
                 <p>Ajoutez, modifiez ou supprimez des ouvrages en quelques clics.</p>
             </div>
             <div class="feature">
-                <h3>Accès rapide</h3>
+                <h3>⚡ Accès rapide</h3>
                 <p>Navigation intuitive pour un accès rapide à toutes les fonctionnalités.</p>
             </div>
         </div>

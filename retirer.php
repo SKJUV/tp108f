@@ -1,100 +1,126 @@
-<?php
-session_start();
-$pageTitle = "Supprimer un ouvrage";
-?>
+<?php // Page de suppression d'ouvrage ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $pageTitle ?> - Bibliothèque Universitaire</title>
+    <title>Supprimer un ouvrage</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="js/search-form.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: none;
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+        nav a {
+            color: #2980b9;
+            background: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.08em;
+            box-shadow: 0 2px 8px rgba(52,152,219,0.10);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        nav a:hover {
+            background: #2980b9;
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+        }
+        .search-section {
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 38px;
+            margin-bottom: 18px;
+        }
+        .search-form label {
+            display: block;
+            margin: 18px 0 6px 0;
+            color: #2980b9;
+            font-weight: bold;
+            text-align: left;
+        }
+        .search-form input[type="text"] {
+            width: 100%;
+            padding: 18px 14px;
+            border: 1px solid #b3c6e0;
+            border-radius: 7px;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            background: #f7fbff;
+            transition: border 0.2s;
+        }
+        .search-form input[type="text"]:focus {
+            border: 1.5px solid #2980b9;
+            outline: none;
+            background: #eaf4fb;
+        }
+        .search-form input[type="submit"] {
+            margin-top: 28px;
+            padding: 16px 48px;
+            background: linear-gradient(90deg, #e74c3c 60%, #ffb199 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.18em;
+            box-shadow: 0 2px 8px rgba(231,76,60,0.12);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .search-form input[type="submit"]:hover {
+            background: linear-gradient(90deg, #c0392b 60%, #e74c3c 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 700px) {
+            .container, .search-section {
+                padding: 18px 8px;
+            }
+            .search-section {
+                padding: 30px 10px 24px 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="index.php" class="logo">Bibliothèque Universitaire</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="ajouter.php">Ajouter</a></li>
-                    <li><a href="retirer.php" class="active">Supprimer</a></li>
-                    <li><a href="rechercher.php">Rechercher</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="#" aria-label="Profil utilisateur"><i class="fas fa-user"></i></a>
-                <button class="nav-toggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <h1 class="section-title">Supprimer un ouvrage</h1>
-
-        <?php if (isset($_SESSION['message'])): ?>
-            <div class="alert alert-<?= $_SESSION['message_type'] ?? 'info' ?> fade-in">
-                <?= $_SESSION['message'] ?>
-                <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
-            </div>
-        <?php endif; ?>
-
-        <div class="card">
+    <nav>
+        <a href="ajouter.php">Ajouter un ouvrage</a>
+        <a href="afficher.php">Afficher un ouvrage</a>
+        <a href="index.php">Accueil</a>
+    </nav>
+    <div class="container">
+        <section class="search-section">
+            <h1>Supprimer un ouvrage</h1>
             <form action="suppression.php" method="get" class="search-form">
-                <div class="form-group">
-                    <label for="ISBN">Rechercher par ISBN :</label>
-                    <input type="text" 
-                           name="ISBN" 
-                           id="ISBN" 
-                           class="form-control" 
-                           placeholder="Entrez l'ISBN de l'ouvrage"
-                           required
-                           pattern="[0-9]{10,13}"
-                           title="L'ISBN doit contenir entre 10 et 13 chiffres">
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-search"></i> Rechercher
-                </button>
+                <label for="ISBN">ISBN :</label>
+                <input type="text" name="ISBN" id="ISBN" placeholder="ISBN de l'ouvrage à supprimer">
+                <input type="submit" value="Rechercher">
             </form>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Bibliothèque Universitaire</h4>
-                    <p>Accès au savoir et à la connaissance pour tous.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Liens rapides</h4>
-                    <ul>
-                        <li><a href="index.php">Accueil</a></li>
-                        <li><a href="ajouter.php">Ajouter un ouvrage</a></li>
-                        <li><a href="rechercher.php">Rechercher</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>Email: contact@biblio-univ.fr</p>
-                    <p>Tél: +33 1 23 45 67 89</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <?= date('Y') ?> Bibliothèque Universitaire. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Menu mobile
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
-        });
-    </script>
+        </section>
+    </div>
 </body>
 </html>
