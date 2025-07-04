@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un ouvrage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="register.php" method="post">
+    <form action="enregistrement.php" method="post">
         <label for="titre_ouvrage">Titre de l'ouvrage</label>
         <input type="text" name="titre_ouvrage" id="titre_ouvrage">
         <label for="auteur_ouvrage">Auteur de l'ouvrage</label>
