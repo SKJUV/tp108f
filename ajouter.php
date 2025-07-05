@@ -30,7 +30,7 @@ critères (ISBN, auteur, éditeur, année de parution,titre de l'ouvrage,date de
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter un ouvrage</title>
+    <title>Ajouter un ouvrage - Bibliothèque Universitaire</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
