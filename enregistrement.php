@@ -8,7 +8,7 @@
 * Auteur 3 : SINENG KENGNI JUVENAL 24H2194  
 <tagnefonodavid@gmail.com.email> 
 <larissabagneken70@gmail.com> 
-<sinengjuvenal@gmail.com > 
+<sinengjuvenal@gmail.com> 
 * ... 
 **************************************************************** 
 * Date de création      
