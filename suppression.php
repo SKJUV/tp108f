@@ -1,5 +1,31 @@
 <?php
-// filepath: c:\xampp\htdocs\tp108f-1\suppression.php
+/**************************************************************** 
+* Projet   : Gestion de la biliothèque  
+* Code PHP : supression.php 
+**************************************************************** 
+* Auteur 1 : TAGNE FONO DAVID NICAULD 24H2005  
+* Auteur 2 : OTTAM BAGNEKEN EMMANUELLA LARISSA 24H2244  
+* Auteur 3 : SINENG KENGNI JUVENAL 24H2194  
+<tagnefonodavid@gmail.com.email> 
+<larissabagneken70@gmail.com> 
+<sinengjuvenal@gmail.com> 
+* ... 
+**************************************************************** 
+* Date de création      
+: 05-07-2025 (05 Juillet 2025) 
+* Dernière modification : 05-07-2025 (05 Juillet 2025) 
+**************************************************************** 
+* Description  
+* Le script supression.php permet la supression des informations  
+* de  la base de données.  
+**************************************************************** 
+* Historique des modifications 
+* 05-07-2025 : Le script la supression  d'un ouvrage  
+*   
+critères (ISBN).  
+***************************************************************/  
+?>
+<?php
 if(isset($_GET['ISBN'])){
     $con = mysqli_connect("localhost", "root", "", "ict108");
     if($con == FALSE){

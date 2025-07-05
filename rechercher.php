@@ -1,3 +1,30 @@
+<?php
+/**************************************************************** 
+* Projet   : Gestion de la biliothèque  
+* Code PHP : rechercher.php 
+**************************************************************** 
+* Auteur 1 : TAGNE FONO DAVID NICAULD 24H2005  
+* Auteur 2 : OTTAM BAGNEKEN EMMANUELLA LARISSA 24H2244  
+* Auteur 3 : SINENG KENGNI JUVENAL 24H2194  
+<tagnefonodavid@gmail.com.email> 
+<larissabagneken70@gmail.com> 
+<sinengjuvenal@gmail.com> 
+* ... 
+**************************************************************** 
+* Date de création      
+: 05-07-2025 (05 Juillet 2025) 
+* Dernière modification : 05-07-2025 (05 Juillet 2025) 
+**************************************************************** 
+* Description  
+* Le script rechercher.php permet l'affichage des informations  
+* de  la base de données.  
+**************************************************************** 
+* Historique des modifications 
+* 05-07-2025 : Le script affiche d'un ouvrage ou de plusieurs ouvrages
+*   
+critères (ISBN, auteur, éditeur, année de parution).  
+***************************************************************/  
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

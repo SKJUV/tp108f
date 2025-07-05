@@ -1,3 +1,28 @@
+<?php
+/**************************************************************** 
+* Projet   : Gestion de la biliothèque  
+* Code PHP : index.php 
+**************************************************************** 
+* Auteur 1 : TAGNE FONO DAVID NICAULD 24H2005  
+* Auteur 2 : OTTAM BAGNEKEN EMMANUELLA LARISSA 24H2244
+* Auteur 3 : SINENG KENGNI JUVENAL 24H2194  
+<tagnefonodavid@gmail.com.email> 
+<larissabagneken70@gmail.com> 
+<sinengjuvenal@gmail.com> 
+* ... 
+**************************************************************** 
+* Date de création      
+: 05-07-2025 (05 Juillet 2025) 
+* Dernière modification : 05-07-2025 (05 Juillet 2025) 
+**************************************************************** 
+* Description  
+* Le script index.php est une page d'aceuill
+**************************************************************** 
+* Historique des modifications 
+* 05-07-2025 : Le script permet de choisir les differents operations que l'on veut effectuer sur les ouvrages
+*  
+***************************************************************/  
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
