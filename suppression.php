@@ -26,14 +26,16 @@ critères (ISBN).
 ***************************************************************/  
 ?>
 <?php
-if(isset($_GET['ISBN'])){
-    $con = mysqli_connect("localhost", "root", "", "ict108");
-    if($con == FALSE){
-        echo "erreur d'ouverture";
-        exit(0);
-    }
-    $request1 = mysqli_query($con, "SELECT * FROM ouvrage WHERE ISBN='" . $_GET['ISBN'] . "'");
+$con = mysqli_connect("localhost", "root", "", "ict108");
+if($con == FALSE){
+    echo "erreur d'ouverture";
+    exit(0);
 }
+if(isset($_GET['ISBN'])){
+    $isbn = mysqli_real_escape_string($con, $_GET['ISBN']);
+    $request1 = mysqli_query($con, "SELECT * FROM ouvrage WHERE ISBN='$isbn'");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
