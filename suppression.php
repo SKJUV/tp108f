@@ -115,8 +115,8 @@ if(isset($_GET['ISBN'])){
             margin-left: 10px;
         }
         .add-btn {
-            background: linear-gradient(90deg, #FFD700 60%, #D4AF37 100%);
-            color: #2c3e50;
+            background: linear-gradient(90deg,rgb(52, 122, 187) 60%,rgb(52, 122, 187) 100%);
+            color:dark;
         }
         .add-btn:hover {
             background: linear-gradient(90deg, #D4AF37 60%, #FFD700 100%);
@@ -124,20 +124,20 @@ if(isset($_GET['ISBN'])){
             transform: translateY(-2px) scale(1.04);
         }
         .gold-button {
-            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
-            color: white;
+            background: linear-gradient(90deg,rgb(52, 122, 187) 60%,rgb(52, 122, 187) 100%);
+            color: dark;
         }
         .gold-button:hover {
-            background: linear-gradient(90deg, #2980b9 60%, #3498db 100%);
+            background: linear-gradient(90deg, #D4AF37 60%, #FFD700 100%);
             color: #fff;
             transform: translateY(-2px) scale(1.04);
         }
         .red-button {
-            background: linear-gradient(90deg, #8e44ad 60%, #a569bd 100%);
-            color: white;
+            background: linear-gradient(90deg,rgb(52, 122, 187) 60%,rgb(52, 122, 187) 100%);
+            color: dark;
         }
         .red-button:hover {
-            background: linear-gradient(90deg, #6c3483 60%, #8e44ad 100%);
+            background: linear-gradient(90deg, #D4AF37 60%, #FFD700 100%);
             color: #fff;
             transform: translateY(-2px) scale(1.04);
         }
@@ -244,10 +244,10 @@ if(isset($_GET['ISBN'])){
                 <button class="add-btn" onclick="window.location.href='ajouter.php';">
                     <span style="font-size: 1.2em; margin-right: 4px;">+</span> Ajouter un livre
                 </button>
-                <button class="gold-button" onclick="window.location.href='retirer.php';" style="padding: 8px 20px; margin-left: 16px;">
+                <button class="gold-button" onclick="window.location.href='retirer.php';" style="font-size: 1.2em; margin-right: 4px;">
                     &#8592; Retour
                 </button>
-                <button type="button" class="red-button" onclick="window.location.href='afficher.php';">
+                <button type="button" class="red-button" onclick="window.location.href='afficher.php';"  style="font-size: 1.2em; margin-right: 4px;">
                     <i class="button"></i> Afficher
                 </button>
             </div>
