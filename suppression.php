@@ -183,6 +183,11 @@ if(isset($_GET['ISBN'])){
             height: 100%;
             object-fit: cover;
         }
+        .header-row div img {
+            width: 120px;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 2px 8px #b3c6e0);
+        }
         .book-info h2 {
             font-size: 1.15em;
             margin: 0 0 8px 0;
@@ -238,7 +243,7 @@ if(isset($_GET['ISBN'])){
         <div class="header-row">
             <div style="display: flex; align-items: center; gap: 16px;">
                 <div style="width:40px;"></div>
-                <img src="captur.PNG" alt="BOOKSPHERE" class="logo">
+                <img src="charger/photo.png" alt="BOOKSPHERE" class="logo">
             </div>
             <div style="display: flex; align-items: center;">
                 <button class="add-btn" onclick="window.location.href='ajouter.php';">
